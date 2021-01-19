@@ -1,0 +1,413 @@
+html{
+    font-size: 16px;
+}
+body{
+    min-width: 320px;
+    font-family: "Roboto";
+}
+.container{
+    box-sizing: border-box;
+    max-width: 1180px;
+    padding: 0 5px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+.intro{
+    background: url(../img/intro-bg.jpg) center center/cover no-repeat;
+    position: relative;
+    overflow:  hidden;
+    padding: 14px 0 166px 0;
+}
+.intro::before{
+    content:'';
+    display: block;
+    height: 616px;
+    width: 616px;
+    background: url(../img/target.png) center no-repeat;
+    position: absolute;
+    top: 52px;
+    left: 56.4%;
+    z-index: 0;
+}
+.intro::after{
+    content:'';
+    display: block;
+    height: 550px;
+    width: 823px;
+    background: url(../img/girl.png) no-repeat;
+    position: absolute;
+    bottom: 0px;
+    left: 26.4%;
+    z-index: 0;
+}
+.intro__header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.intro__logo-text{
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.9375rem;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+}
+.intro__logo{
+    transition: transform 0.2s;
+}
+.intro__logo:hover{
+    transform: scale(1.05);
+}
+.intro__logo:active{
+    transform: scale(1);
+}
+.menu__list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.intro__menu-list{
+    margin-top: 10px;
+}
+.menu__item{
+    margin-right: 30px;
+    max-width: 100%;
+}
+.menu__item:last-child{
+    margin-right: 0;
+}
+.menu__link{
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.3125rem;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu__link:hover{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.menu__item:active{
+    transform: scale(0.9);
+}
+.contacts{
+    display: flex;
+    justify-content: flex-end;
+}
+.intro__contacts{
+    margin-top: 12px;
+}
+.contacts__btn{
+    padding: 0;
+    color: #FFFFFF;
+    background: #000000;
+    border: 0;
+    border-radius: 6px;
+    width: 168px;
+    height: 40px;
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+    cursor: pointer;
+    position: relative;
+    box-sizing: content-box;
+    background-clip: content-box;
+    border-right: 10px solid transparent;
+    outline: none;
+    box-shadow: -25px 16px 30px rgba(69, 90, 100, 0.4);
+    transition: transform 0.2s;
+}
+.contacts__btn::before{
+    color: #000;
+    font-size: 80px;
+    position: absolute;
+    top: -10px;
+    right: -60px;
+}
+.contacts__btn:hover{
+    transform: scale(1.05);
+}
+.contacts__btn:active{
+    transform: scale(1);
+}
+.intro__contacts-btn{
+    margin-left: 70px;
+}
+.intro__communications{
+    margin-left: 73px;  
+}
+.contacts__phone{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s;
+}
+.contacts__phone:hover{
+    transform: translateY(-5px);
+}
+.contacts__phone::before{
+    margin-right: 10px;
+}
+.contacts__email{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #000000;
+    margin-top: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 40px;
+    transition: transform 0.2s;
+}
+.contacts__email:hover{
+    transform: scale(1.1);
+}
+.contacts__email:active{
+    transform: scale(1)
+}
+.contacts__location{
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    color: #000000;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.contacts__location:hover{
+    transform: translateY(-5px);
+}
+.contacts__location::before{
+    margin-right: 10px;
+}
+.contacts__location::before{
+    font-size: 1.25rem;
+    line-height: 0;
+    margin-right: 15px;
+}
+.intro__offer{
+    margin-top: 93px;
+    max-width: 568px;
+    position: relative;
+}
+.offer-text{
+    font-weight: 700;
+    font-size: 3.375rem;
+    line-height: 4.125rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: block;
+}
+.intro__offer-text{
+    width: 404px;
+    margin-left: auto;
+}
+.intro__offer-descr{
+    width: 455px;
+    display: flex;
+    position: absolute;
+    top: 40px;
+    left: -12px;
+}
+.icon-ali{
+    color: #fff;
+    font-size: 78px;
+}
+.icon-express{
+    font-size: 6rem;
+    color: #E43225;
+    display: block;
+    margin-top: 9px;
+}
+.intro__title{
+    margin-top: 112px;
+    max-width: 362px;
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+    color: #000000;
+    margin-bottom: 0;
+}
+.intro__offer-btn{
+    margin-top: 30px;
+    width: 256px;
+}
+.btn{
+    padding: 0;
+    height: 60px;
+    border: 0;
+    background: #000000;
+    border-radius: 6px;
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: #FFFFFF;
+    position: relative;
+    box-sizing: content-box;
+    background-clip: content-box;
+    border-right: 15px solid transparent;
+    outline: none;
+    cursor: pointer;
+    box-shadow: -25px 16px 30px rgba(69, 90, 100, 0.4);
+    transition: transform 0.3s;
+}
+.btn:hover{
+    transform: scale(1.05);
+}
+.btn:active{
+    transform: scale(1);
+}
+.btn::before{
+    color: #000;
+    font-size: 7.625rem;
+    position: absolute;
+    top: 45px;
+    right: -92px;
+    line-height: 0;
+}
+.hamburger{
+    height: 4px;
+    width: 24px;
+    background-color: orange;
+    background-clip: content-box;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    display: none;
+}
+.hamburger::before{
+    content:'';
+    height: 4px;
+    width: 24px;
+    background-color: orange;
+    display: block;
+    position: relative;
+    top: -7px;
+}
+.hamburger::after{
+    content:'';
+    height: 4px;
+    width: 24px;
+    background-color: orange;
+    display: block;
+    position: relative;
+    top: 3px;
+
+}
+@media ( max-width: 1110px ){
+    .intro{
+        padding-top: 0;
+    }
+    .intro__header{
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 0;
+    }
+    .menu__item{
+        margin-right: 13px;
+    }
+    .menu__link{
+        font-size: 0.9375rem;
+        text-transform: none;
+    }
+    .intro__logo-text{
+        font-size: 1.75rem;
+    }
+    .intro__contacts{
+        justify-content: center;
+        align-items: center;
+    }
+    .intro::after{
+        left: 50%;
+        transform: translate(-70%);
+    }
+    .intro::before{
+        left: 50%;
+    }
+    .contacts__phone{
+        font-size: 1.25rem;
+    }
+} 
+@media ( max-width: 768px ){
+    .intro__menu-list, .contacts__email, .contacts__number, .contacts__address{
+        display: none;
+    }
+    .intro::before{
+        transform: scale(0.3) translate(-10%);
+        top: 40%;
+        left: 35%; 
+    }
+    .hamburger{
+        display: block;
+    }
+    .intro__header{
+        justify-content: space-between;
+    }
+    .container-intro{
+        padding: 0 24px;
+    }
+    .intro__contacts-btn{
+        margin-left: 0;
+        font-size: 0.875rem;
+        height: 30px;
+        width: 130px;
+        border-right: 7px solid transparent;
+    }
+    .intro__contacts-btn::before{
+        font-size: 3.8125rem;
+        top: -8px;
+        left: 91px;
+    }
+    .intro__communications{
+        margin-left: 0;
+    }
+    .intro__contacts{
+        justify-content: flex-end;
+    }
+    .intro__offer{
+        max-width: 100%;
+    }
+    .intro__offer-text{
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    .intro__title{
+        text-align: center;
+        font-size: 1.75rem;
+        margin: 0 auto;
+        margin-top: 90px;
+    }
+    .contacts__phone::before{
+        font-size: 1.5625rem;
+        margin-right: 20px;
+    }
+}
+@media ( max-width: 480px ){
+    .intro{
+        padding-bottom: 125px;
+    }
+    .intro::before{
+        display: none;
+    }
+    .icon-ali{
+        font-size: 3.375rem;
+    }
+    .icon-express{
+        font-size: 3.75rem;
+    }
+    .offer-text{
+        font-size: 1.875rem;
+    }
+}

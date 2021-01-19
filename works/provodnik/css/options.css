@@ -1,0 +1,210 @@
+.options{
+   padding-top: 101px;
+}
+.options__wrapper{
+    display: flex;
+}
+.options__situation{
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: 9px;
+    position: relative;
+}
+.situation__wrapper{
+    border-right: 1px solid black;
+}
+.situation__pic{
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+}
+.situation__text{
+    padding-bottom: 93px;
+}
+.situation__descr{
+    margin: 54px 80px 0 auto;
+    max-width: 396px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+.options__solution{
+    width: 50%;
+    position: relative;
+}
+.solution__title{
+    display: block;
+    margin: 88px 0 0 277px;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+.solution__number{
+    margin-left: 109px;
+    position: relative;
+}
+.solution__number::before{
+    content:'№';
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 2px;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+.solution__number::after{
+    content:"1";
+    display: block;
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 9rem;
+    position: absolute;
+    top: -32px;
+    left: 54px;
+}
+.solution__item-first{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.solution__descr{
+    margin: 0;
+    margin-left: 44px;
+    max-width: 303px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.solution__item-second{
+    display: flex;
+    margin-top: 67px;
+}
+.solution__number-second{
+   margin-top: 10px;
+}
+.solution__number-second::after{
+    content:"2";
+}
+.situation::before{
+    content:'Ситуация';
+    width: 131px;
+    height: 40px;
+    background: url(../img/label.svg);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+.solution::before{
+    content:'Решение';
+    width: 131px;
+    height: 40px;
+    background: url(../img/label.svg);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 110px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.solution::after{
+    content:'ИЛИ';
+    width: 131px;
+    height: 40px;
+    background: url(../img/label.svg);
+    color: #fff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transform: scale(0.7) translate(-80%);
+}
+@media ( max-width: 1110px ){
+    .solution__number{
+        margin: 0 auto;
+    }
+    .solution__descr{
+        margin-left: 5px;
+    }
+    .solution__title{
+        width: 130px;
+        margin: 70px auto 0;
+        text-align: center;
+    }
+}
+@media ( max-width: 768px ){
+    .options{
+        padding-top: 60px;
+    }
+    .solution__item-second{
+        margin-top: 0;
+    }
+    .solution__number{
+        display: none;
+    }
+    .situation__descr, .solution__text{
+        margin: 0 auto;
+    }
+    .situation::before{
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .solution::before{
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .solution__title{
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-top: 0;
+    }
+    .situation__text{
+        margin-top: 35px;
+        text-align: center;
+    }
+    .solution__descr{
+        margin: 20px 0 40px 0;
+        text-align: center;
+        max-width: 295px;
+    }
+    .solution::after{
+        display: flex;
+    }
+}
+@media ( max-width: 480px ){
+    .options__wrapper{
+        flex-direction: column;
+    }
+    .options__situation, .options__solution{
+        width: 100%;
+        padding: 0;
+    }
+    .situation__wrapper{
+        border: none;
+    }
+    .situation__img{
+        display: none;
+    }
+    .situation__text{
+        margin-top: 10px;
+        padding-bottom: 70px;
+    }
+}

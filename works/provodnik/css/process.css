@@ -1,0 +1,117 @@
+.process{
+    background: url(../img/human-process.png) 51% 100% no-repeat, #F5F5F5;
+    padding: 70px 0 162px 0;
+    box-sizing: border-box;
+}
+.process__wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.process__item{
+    display: flex;
+    align-items: center;
+    min-width: 400px;
+    max-height: 100px;
+}
+.process__descr{
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0;
+}
+.process__num{
+    width: 62px;
+    height: 62px;
+    box-sizing: border-box;
+    background-clip: content-box;
+    background-color: #651FFF;
+    border: 7px solid #FDBF0F;
+    border-radius: 50%;
+    padding: 4px;
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+.process__item:nth-child(1){
+    order: 3;
+    margin-top: 213px;
+    margin-left: 106px;
+}
+.process__item:nth-child(2){
+    order: 1;
+    margin-top: 154px;
+    margin-left: 27px;
+}
+.process__item:nth-child(3){
+    order: 2;
+    margin-right: 105px;
+    margin-top: 33px;
+}
+.process__item:nth-child(4){
+    order: 4;
+    margin-top: 48px;
+    min-width: 350px;
+}
+.process__item:nth-child(1) .process__descr{
+    order: -1;
+    text-align: right;
+    margin-right: 16px;
+}
+.process__item:nth-child(2) .process__descr{
+    order: -1;
+    text-align: right;
+    margin-right: 22px;
+}
+.process__item:nth-child(3) .process__descr{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.process__item:nth-child(4) .process__descr{
+    margin-left: 16px;
+    margin-top: 13px;
+}
+@media (max-width: 1100px){
+    .process{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background: #F5F5F5;
+    }
+    .process__title{
+        text-align: center;
+    }
+    .process__wrapper .process__item{
+       order: 0;
+       margin: 0;
+       margin-top: 50px;
+    }
+    .process__wrapper{
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    .process__wrapper .process__item .process__descr{
+        font-weight: 700;
+        font-size: 1.125rem;
+        text-align: left;
+        order: 0;
+        margin: 0;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 768px){
+    .process__wrapper{
+        min-width: 100%;
+    }
+    .process__wrapper .process__item{
+        min-width: 100%;
+    }
+    .process__num{
+        min-width: 60px;
+    }
+}
