@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     deleteAdv(adv);
 
-    const makeChanges = () => {
-        genre.textContent = 'Драма';
+    // const makeChanges = () => {
+    //     genre.textContent = 'Драма';
     
-        poster.style.backgroundImage = "url('../img/bg.jpg')";
-    };
+    //     poster.style.backgroundImage = "url('../img/bg.jpg')";
+    // };
 
     makeChanges();
     
