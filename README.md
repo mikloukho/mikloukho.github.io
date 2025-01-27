@@ -60,4 +60,4 @@ This ensures that the final password is unique for Gmail, but also contains part
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/secure-password-generator.git
+   git clone https://github.com/mikloukho/secure-password-generator.git
