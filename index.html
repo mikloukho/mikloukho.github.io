@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Secure Password Generator</h1>
+    <form id="passwordForm" autocomplete="off">
+        <label for="service">Enter Service Name (e.g. Gmail, Facebook):</label>
+        <input type="text" id="service" required>
+
+        <label for="salt">Enter Your Salt:</label>
+        <input type="text" id="salt" required>
+
+        <label for="memorablePart">Enter Memorable Part (optional):</label>
+        <input type="text" id="memorablePart">
+
+        <label for="hashLength">Select Hash Length:</label>
+        <input type="range" id="hashLength" min="8" max="64" value="14">
+        <span id="hashLengthValue">14</span> characters
+
+        <button type="submit">Generate Secure Password</button>
+    </form>
+
+    <div id="result">
+        <h3>Generated Secure Password:</h3>
+        <p id="generatedPassword"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
