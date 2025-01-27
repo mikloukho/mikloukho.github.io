@@ -1,53 +1,52 @@
-// Функция для генерации безопасного пароля
-async function generateSecurePassword(event) {
-    event.preventDefault(); // Отменяем стандартное поведение формы
+const crypto = window.crypto || window.msCrypto;
 
-    const service = document.getElementById('service').value.trim();
-    const salt = document.getElementById('salt').value.trim();
-    const memorablePart = document.getElementById('memorablePart').value.trim();
-    const hashLength = parseInt(document.getElementById('hashLength').value);
-
-    // Генерируем уникальную соль для каждого сервиса
-    const uniqueSalt = service + salt; // Используем название сервиса + соль
-
-    // Создаем комбинированную строку для хэширования
-    const combinedString = memorablePart + uniqueSalt;
-
-    // Хэшируем строку с помощью SHA-256
-    const hashBuffer = await hashString(combinedString);
-
-    // Преобразуем хэш в строку
-    const hashHex = bufferToHex(hashBuffer);
-
-    // Отрезаем хэш до нужной длины
-    const truncatedHash = hashHex.substring(0, hashLength);
-
-    // Отображаем сгенерированный пароль
-    document.getElementById('generatedPassword').textContent = truncatedHash;
-}
-
-// Функция для хэширования строки с помощью SHA-256
-async function hashString(str) {
+function generateHMAC(service, salt, length) {
     const encoder = new TextEncoder();
-    const data = encoder.encode(str);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    return hashBuffer;
+    const data = encoder.encode(service);
+    const key = encoder.encode(salt);
+
+    return crypto.subtle.importKey('raw', key, { name: 'HMAC', hash: { name: 'SHA-256' } }, false, ['sign'])
+        .then(cryptoKey => crypto.subtle.sign('HMAC', cryptoKey, data))
+        .then(signature => {
+            const hashArray = Array.from(new Uint8Array(signature));
+            return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        })
+        .then(hash => {
+            return hash.slice(0, length);
+        });
 }
 
-// Функция для преобразования массива байтов в строку в формате Hex
-function bufferToHex(buffer) {
-    const byteArray = new Uint8Array(buffer);
-    let hexString = '';
-    byteArray.forEach(byte => {
-        hexString += ('00' + byte.toString(16)).slice(-2); // Преобразуем байт в строку hex
-    });
-    return hexString;
+function generatePassword(service, salt, memorablePhrase, length) {
+    return generateHMAC(service, salt, length)
+        .then(hash => {
+            // Добавляем запоминаемую фразу в конец хэша
+            const finalPassword = hash + memorablePhrase;
+            return finalPassword;
+        });
 }
 
-// Обработчик формы
-document.getElementById('passwordForm').addEventListener('submit', generateSecurePassword);
+document.getElementById('password-form').addEventListener('submit', (event) => {
+    event.preventDefault();
 
-// Обновление значения ползунка
-document.getElementById('hashLength').addEventListener('input', function() {
-    document.getElementById('hashLengthValue').textContent = this.value;
+    const service = document.getElementById('service').value;
+    const salt = document.getElementById('salt').value;
+    const memorablePhrase = document.getElementById('phrase').value;
+    const hashLength = parseInt(document.getElementById('hash-length').value, 10);
+
+    if (service && salt) {
+        generatePassword(service, salt, memorablePhrase, hashLength)
+            .then(password => {
+                document.getElementById('generated-password').value = password;
+            })
+            .catch(error => {
+                console.error("Error generating password:", error);
+            });
+    } else {
+        alert("Please fill out all required fields.");
+    }
+});
+
+document.getElementById('hash-length').addEventListener('input', (event) => {
+    const value = event.target.value;
+    document.getElementById('hash-length-value').textContent = value;
 });

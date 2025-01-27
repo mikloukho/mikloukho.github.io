@@ -9,26 +9,34 @@
 <body>
 <div class="container">
     <h1>Secure Password Generator</h1>
-    <form id="passwordForm" autocomplete="off">
-        <label for="service">Enter Service Name (e.g. Gmail, Facebook):</label>
-        <input type="text" id="service" required>
+    <form id="password-form" autocomplete="off">
+        <div>
+            <label for="service">Enter Service Name (e.g. Gmail, Facebook):</label>
+            <input type="text" id="service" placeholder="Enter service name" required>
+        </div>
+        <div>
+            <label for="salt">Enter Your Salt:</label>
+            <input type="text" id="salt" placeholder="Enter salt" required>
+        </div>
 
-        <label for="salt">Enter Your Salt:</label>
-        <input type="text" id="salt" required>
+        <div>
+            <label for="phrase">Enter Memorable Part (optional):</label>
+            <input type="text" id="phrase" placeholder="Enter your memorable phrase">
+        </div>
 
-        <label for="memorablePart">Enter Memorable Part (optional):</label>
-        <input type="text" id="memorablePart">
 
-        <label for="hashLength">Select Hash Length:</label>
-        <input type="range" id="hashLength" min="8" max="64" value="14">
-        <span id="hashLengthValue">14</span> characters
+        <div>
+            <label for="hash-length">Select Hash Length:</label>
+            <input type="range" id="hash-length" min="8" max="64" value="14">
+            <span id="hash-length-value">14</span> characters
+        </div>
 
         <button type="submit">Generate Secure Password</button>
     </form>
 
-    <div id="result">
-        <h3>Generated Secure Password:</h3>
-        <p id="generatedPassword"></p>
+    <div class="result">
+        <h2>Generated Secure Password:</h2>
+        <textarea id="generated-password" readonly></textarea>
     </div>
 </div>
 
